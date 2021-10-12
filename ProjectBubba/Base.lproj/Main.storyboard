@@ -1,24 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DeU-cp-CqJ">
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="fnF-Az-5qI">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <navigationController id="DeU-cp-CqJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rd9-bq-li3">
+                        <rect key="frame" x="0.0" y="24" width="1024" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="iiz-ny-8cX" kind="relationship" relationship="rootViewController" id="r1T-W3-GMi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IFQ-pb-EEn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-303" y="198"/>
+        </scene>
+        <!--HomeVC-->
+        <scene sceneID="qtv-l2-ndm">
+            <objects>
+                <viewController storyboardIdentifier="HomeVC" id="iiz-ny-8cX" customClass="HomeVC" customModule="ProjectBubba" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p9b-Cf-LRm">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5IQ-BL-F4U">
+                                <rect key="frame" x="420" y="68" width="184" height="86"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="WEo-fE-sjf">
+                                <rect key="frame" x="262" y="301" width="500" height="850"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zh-nS-J98">
+                                        <rect key="frame" x="0.0" y="0.0" width="500" height="250"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <backgroundConfiguration key="background" image="Talk_Button.png"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="talkViewButtonPressed:" destination="iiz-ny-8cX" eventType="touchUpInside" id="2uO-vM-Tez"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVz-OS-AcR">
+                                        <rect key="frame" x="0.0" y="300" width="500" height="250"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <backgroundConfiguration key="background" image="Actions_Button.png"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="actionViewButtonPressed:" destination="iiz-ny-8cX" eventType="touchUpInside" id="cRf-bG-Ti5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5O-Rr-OGi">
+                                        <rect key="frame" x="0.0" y="600" width="500" height="250"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <backgroundConfiguration key="background" image="Watch_Button.png"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="watchViewButtonPressed:" destination="iiz-ny-8cX" eventType="touchUpInside" id="OXA-zF-Ol7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="850" id="Mi3-Th-Xub"/>
+                                    <constraint firstAttribute="width" constant="500" id="U0j-v9-VOC"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mQ6-g3-Rhp"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <constraints>
+                            <constraint firstItem="WEo-fE-sjf" firstAttribute="centerX" secondItem="5IQ-BL-F4U" secondAttribute="centerX" id="2dU-AP-1Ns"/>
+                            <constraint firstItem="mQ6-g3-Rhp" firstAttribute="bottom" secondItem="WEo-fE-sjf" secondAttribute="bottom" constant="195" id="GNa-Cw-SgU"/>
+                            <constraint firstItem="5IQ-BL-F4U" firstAttribute="centerX" secondItem="p9b-Cf-LRm" secondAttribute="centerX" id="kq1-4c-QBR"/>
+                            <constraint firstItem="5IQ-BL-F4U" firstAttribute="top" secondItem="p9b-Cf-LRm" secondAttribute="topMargin" constant="-6" id="qvu-gJ-cEA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="H7S-cT-NB9"/>
+                    <connections>
+                        <segue destination="zI1-1f-GIo" kind="show" identifier="TalkViewSegue" id="EeO-Lq-2Pi"/>
+                        <segue destination="ZId-go-5zt" kind="show" identifier="ActionsViewSegue" id="o1F-m4-arp"/>
+                        <segue destination="B5M-Ns-ejE" kind="show" identifier="WatchViewSegue" id="YPq-08-mkj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r9S-vK-67q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="499.80468749999994" y="199.85358711566616"/>
+        </scene>
+        <!--ActionsVC-->
+        <scene sceneID="6mq-g7-YbZ">
+            <objects>
+                <viewController storyboardIdentifier="ActionsVC" id="ZId-go-5zt" customClass="ActionsVC" customModule="ProjectBubba" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5cj-HU-87d">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Actions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVB-R3-9PO">
+                                <rect key="frame" x="397.5" y="72" width="229" height="86"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3WP-it-uua"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <constraints>
+                            <constraint firstItem="oVB-R3-9PO" firstAttribute="centerX" secondItem="5cj-HU-87d" secondAttribute="centerX" id="aMy-1K-jJv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="uMa-x8-wKg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="llw-aQ-Wlk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1329" y="198"/>
+        </scene>
+        <!--WatchVC-->
+        <scene sceneID="iLs-fj-0js">
+            <objects>
+                <viewController storyboardIdentifier="WatchVC" id="B5M-Ns-ejE" customClass="WatchVC" customModule="ProjectBubba" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u6J-YV-F6Z">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Watch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwi-uW-oEE">
+                                <rect key="frame" x="415" y="90" width="194" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bTQ-Je-bjj"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rxd-q0-Xo3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zSc-mh-Qyj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1332" y="872"/>
+        </scene>
+        <!--TalkVC-->
+        <scene sceneID="Kcw-dg-tRA">
+            <objects>
+                <viewController storyboardIdentifier="TalkVC" id="zI1-1f-GIo" customClass="TalkVC" customModule="ProjectBubba" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nTv-fe-Gtx">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Talk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ent-vt-x8u">
+                                <rect key="frame" x="452.5" y="73" width="119" height="86"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ESn-be-SQg"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <constraints>
+                            <constraint firstItem="Ent-vt-x8u" firstAttribute="centerX" secondItem="nTv-fe-Gtx" secondAttribute="centerX" id="wQO-iQ-rMC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="7BE-be-xoC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bPL-1R-bHA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1332" y="-456"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Actions_Button.png" width="500" height="250"/>
+        <image name="Talk_Button.png" width="500" height="250"/>
+        <image name="Watch_Button.png" width="500" height="250"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

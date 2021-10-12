@@ -9,21 +9,33 @@
 /* Begin PBXBuildFile section */
 		025EF1B8271250BC001F97C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025EF1B7271250BC001F97C0 /* AppDelegate.swift */; };
 		025EF1BA271250BC001F97C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025EF1B9271250BC001F97C0 /* SceneDelegate.swift */; };
-		025EF1BC271250BC001F97C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025EF1BB271250BC001F97C0 /* ViewController.swift */; };
+		025EF1BC271250BC001F97C0 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025EF1BB271250BC001F97C0 /* HomeVC.swift */; };
 		025EF1BF271250BC001F97C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 025EF1BD271250BC001F97C0 /* Main.storyboard */; };
 		025EF1C1271250BE001F97C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 025EF1C0271250BE001F97C0 /* Assets.xcassets */; };
 		025EF1C4271250BE001F97C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 025EF1C2271250BE001F97C0 /* LaunchScreen.storyboard */; };
+		74E4AF61271536F700030DB9 /* Talk_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 74E4AF60271536F700030DB9 /* Talk_Button.png */; };
+		74E4AF632715370900030DB9 /* Actions_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 74E4AF622715370900030DB9 /* Actions_Button.png */; };
+		74E4AF652715371000030DB9 /* Watch_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 74E4AF642715371000030DB9 /* Watch_Button.png */; };
+		74E4AF672715402900030DB9 /* ActionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4AF662715402900030DB9 /* ActionsVC.swift */; };
+		74E4AF692715422300030DB9 /* TalkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4AF682715422300030DB9 /* TalkVC.swift */; };
+		74E4AF6B2715422D00030DB9 /* WatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4AF6A2715422D00030DB9 /* WatchVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		025EF1B4271250BC001F97C0 /* ProjectBubba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectBubba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		025EF1B7271250BC001F97C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		025EF1B9271250BC001F97C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		025EF1BB271250BC001F97C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		025EF1BB271250BC001F97C0 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		025EF1BE271250BC001F97C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		025EF1C0271250BE001F97C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		025EF1C3271250BE001F97C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		025EF1C5271250BE001F97C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74E4AF60271536F700030DB9 /* Talk_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Talk_Button.png; sourceTree = "<group>"; };
+		74E4AF622715370900030DB9 /* Actions_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Actions_Button.png; sourceTree = "<group>"; };
+		74E4AF642715371000030DB9 /* Watch_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Watch_Button.png; sourceTree = "<group>"; };
+		74E4AF662715402900030DB9 /* ActionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsVC.swift; sourceTree = "<group>"; };
+		74E4AF682715422300030DB9 /* TalkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkVC.swift; sourceTree = "<group>"; };
+		74E4AF6A2715422D00030DB9 /* WatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +70,16 @@
 			children = (
 				025EF1B7271250BC001F97C0 /* AppDelegate.swift */,
 				025EF1B9271250BC001F97C0 /* SceneDelegate.swift */,
-				025EF1BB271250BC001F97C0 /* ViewController.swift */,
+				025EF1BB271250BC001F97C0 /* HomeVC.swift */,
+				74E4AF662715402900030DB9 /* ActionsVC.swift */,
+				74E4AF682715422300030DB9 /* TalkVC.swift */,
+				74E4AF6A2715422D00030DB9 /* WatchVC.swift */,
 				025EF1BD271250BC001F97C0 /* Main.storyboard */,
 				025EF1C0271250BE001F97C0 /* Assets.xcassets */,
 				025EF1C2271250BE001F97C0 /* LaunchScreen.storyboard */,
+				74E4AF60271536F700030DB9 /* Talk_Button.png */,
+				74E4AF622715370900030DB9 /* Actions_Button.png */,
+				74E4AF642715371000030DB9 /* Watch_Button.png */,
 				025EF1C5271250BE001F97C0 /* Info.plist */,
 			);
 			path = ProjectBubba;
@@ -126,6 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				025EF1C4271250BE001F97C0 /* LaunchScreen.storyboard in Resources */,
+				74E4AF61271536F700030DB9 /* Talk_Button.png in Resources */,
+				74E4AF632715370900030DB9 /* Actions_Button.png in Resources */,
+				74E4AF652715371000030DB9 /* Watch_Button.png in Resources */,
 				025EF1C1271250BE001F97C0 /* Assets.xcassets in Resources */,
 				025EF1BF271250BC001F97C0 /* Main.storyboard in Resources */,
 			);
@@ -138,9 +159,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				025EF1BC271250BC001F97C0 /* ViewController.swift in Sources */,
+				74E4AF672715402900030DB9 /* ActionsVC.swift in Sources */,
+				025EF1BC271250BC001F97C0 /* HomeVC.swift in Sources */,
+				74E4AF6B2715422D00030DB9 /* WatchVC.swift in Sources */,
 				025EF1B8271250BC001F97C0 /* AppDelegate.swift in Sources */,
 				025EF1BA271250BC001F97C0 /* SceneDelegate.swift in Sources */,
+				74E4AF692715422300030DB9 /* TalkVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
