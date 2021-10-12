@@ -7,10 +7,10 @@
 
 import UIKit
 
-class WatchVC: UIViewController {
-
+class WatchVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
+	
         // Do any additional setup after loading the view.
     }
 
