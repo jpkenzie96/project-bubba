@@ -25,5 +25,8 @@ class HomeVC: UIViewController {
     @IBAction func watchViewButtonPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "WatchViewSegue", sender: self)
     }
-}
+    
+    @IBAction func settingsViewButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "SettingsViewSegue", sender: self)
+    }}
 
