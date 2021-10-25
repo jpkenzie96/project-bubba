@@ -164,7 +164,7 @@
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="100"/>
                                             <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="45"/>
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
-                                            <color key="baseBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dd-y6-b59">
@@ -174,17 +174,18 @@
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="100"/>
                                             <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="45"/>
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
-                                            <color key="baseBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5m-dK-Qci">
                                         <rect key="frame" x="655" y="0.0" width="267.5" height="300"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" image="gamecontroller" catalog="system" imagePlacement="bottom" title="Play" imagePadding="21" cornerStyle="medium">
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="100"/>
                                             <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="45"/>
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
-                                            <color key="baseBackgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYl-Ws-9iS">
@@ -194,7 +195,7 @@
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="100"/>
                                             <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="45"/>
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
-                                            <color key="baseBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                     </button>
                                 </subviews>
@@ -214,6 +215,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uMa-x8-wKg"/>
+                    <connections>
+                        <outlet property="action1" destination="CBw-Mt-pqJ" id="hAA-HA-3Pt"/>
+                        <outlet property="action2" destination="9dd-y6-b59" id="ad9-ab-ku2"/>
+                        <outlet property="action3" destination="l5m-dK-Qci" id="b0D-kp-SS5"/>
+                        <outlet property="action4" destination="hYl-Ws-9iS" id="ulQ-rr-LTC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="llw-aQ-Wlk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -379,14 +386,14 @@
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="sJx-3n-OWV">
-                                        <rect key="frame" x="640" y="0.0" width="250" height="500"/>
+                                        <rect key="frame" x="640" y="0.0" width="240" height="500"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="Cgy-El-atN"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie4.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="nBF-dr-xP8">
-                                        <rect key="frame" x="960" y="0.0" width="240" height="500"/>
+                                        <rect key="frame" x="950" y="0.0" width="250" height="500"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="PSO-s8-Ycf"/>
                                         </constraints>

@@ -24,7 +24,6 @@ class TalkVC: UIViewController {
     }
     
     @objc func timerAction() {
-        print("Timer Fired")
         self.yesNoLabel.setImage(noImage, for: .normal)
     }
     
