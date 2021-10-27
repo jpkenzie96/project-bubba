@@ -370,47 +370,64 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="juo-NM-1Qh">
-                                <rect key="frame" x="80" y="300" width="1200" height="500"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="JfY-6r-Hxu">
+                                <rect key="frame" x="117" y="302" width="1200" height="600"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie1.jpg" highlightedImage="movie1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="djZ-VI-RKh">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="500"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="350" translatesAutoresizingMaskIntoConstraints="NO" id="xnD-UB-0Xs">
+                                        <rect key="frame" x="0.0" y="0.0" width="1200" height="250"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie3.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="FPh-0b-KsB">
+                                                <rect key="frame" x="0.0" y="0.0" width="400" height="250"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="400" id="2xY-xf-LTw"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie4.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="EIo-XG-ahF">
+                                                <rect key="frame" x="750" y="0.0" width="450" height="250"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="400" id="caA-yK-ZwA"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="250" id="Zjh-Cr-LtV"/>
+                                            <constraint firstAttribute="width" constant="1200" id="Zer-s3-qli"/>
+                                            <constraint firstAttribute="height" constant="250" id="pJF-Jx-5FT"/>
                                         </constraints>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="WJD-pR-SqD">
-                                        <rect key="frame" x="320" y="0.0" width="250" height="500"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="350" translatesAutoresizingMaskIntoConstraints="NO" id="aS3-wg-2Ec">
+                                        <rect key="frame" x="0.0" y="350" width="1200" height="250"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie1.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="nOc-ES-9NQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="400" height="250"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="400" id="n26-7B-1jD"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie2.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="7wl-dc-NuV">
+                                                <rect key="frame" x="750" y="0.0" width="450" height="250"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="400" id="OJt-m7-nJn"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="250" id="xeF-Vt-fMh"/>
+                                            <constraint firstAttribute="height" constant="250" id="Czb-hJ-RC7"/>
+                                            <constraint firstAttribute="width" constant="1200" id="iaJ-RV-DqW"/>
                                         </constraints>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="sJx-3n-OWV">
-                                        <rect key="frame" x="640" y="0.0" width="240" height="500"/>
-                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="250" id="Cgy-El-atN"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie4.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="nBF-dr-xP8">
-                                        <rect key="frame" x="950" y="0.0" width="250" height="500"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="250" id="PSO-s8-Ycf"/>
-                                        </constraints>
-                                    </imageView>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="1200" id="GDI-go-50P"/>
-                                    <constraint firstAttribute="height" constant="500" id="nQn-3i-Azr"/>
+                                    <constraint firstAttribute="width" constant="1200" id="DnM-xO-fje"/>
+                                    <constraint firstAttribute="height" constant="600" id="eh2-Xn-XZT"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bTQ-Je-bjj"/>
                         <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="juo-NM-1Qh" firstAttribute="leading" secondItem="bTQ-Je-bjj" secondAttribute="leading" constant="80" id="CwO-0O-yFi"/>
-                            <constraint firstItem="juo-NM-1Qh" firstAttribute="top" secondItem="bTQ-Je-bjj" secondAttribute="top" constant="226" id="Jkh-Bz-d7Y"/>
+                            <constraint firstItem="JfY-6r-Hxu" firstAttribute="leading" secondItem="bTQ-Je-bjj" secondAttribute="leading" constant="117" id="4nb-xS-20h"/>
                             <constraint firstItem="mwi-uW-oEE" firstAttribute="top" secondItem="bTQ-Je-bjj" secondAttribute="top" constant="-24" id="bJh-y1-EEu"/>
+                            <constraint firstItem="JfY-6r-Hxu" firstAttribute="top" secondItem="mwi-uW-oEE" secondAttribute="bottom" constant="57" id="mL9-tc-X1P"/>
                             <constraint firstItem="mwi-uW-oEE" firstAttribute="centerX" secondItem="u6J-YV-F6Z" secondAttribute="centerX" id="vdy-Pb-2md"/>
                         </constraints>
                     </view>
@@ -593,10 +610,10 @@
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="moon.zzz" catalog="system" width="115" height="128"/>
-        <image name="movie1.jpg" width="2025" height="3000"/>
-        <image name="movie2.jpg" width="170" height="255"/>
-        <image name="movie3.jpg" width="343" height="500"/>
-        <image name="movie4.jpg" width="800" height="1184"/>
+        <image name="movie1.jpeg" width="320" height="180"/>
+        <image name="movie2.jpeg" width="466" height="313"/>
+        <image name="movie3.jpeg" width="1440" height="900"/>
+        <image name="movie4.jpeg" width="1440" height="750"/>
         <image name="paintbrush.pointed" catalog="system" width="128" height="116"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="play.tv" catalog="system" width="128" height="97"/>
@@ -607,9 +624,6 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

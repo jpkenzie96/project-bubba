@@ -25,10 +25,10 @@
 		C39C0B002724979F006F892E /* StartupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39C0AFF2724979F006F892E /* StartupVC.swift */; };
 		C39C0B0627249D1E006F892E /* CalibrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39C0B0527249D1E006F892E /* CalibrationVC.swift */; };
 		C39C0B0E2725A705006F892E /* bluetooth.png in Resources */ = {isa = PBXBuildFile; fileRef = C39C0B0D2725A705006F892E /* bluetooth.png */; };
-		E2B973502715BE980030BDB5 /* movie1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2B9734F2715BE980030BDB5 /* movie1.jpg */; };
-		E2B973522715BF1E0030BDB5 /* movie2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2B973512715BF1E0030BDB5 /* movie2.jpg */; };
-		E2B973542715C0BB0030BDB5 /* movie3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2B973532715C0BB0030BDB5 /* movie3.jpg */; };
-		E2B973562715C0C50030BDB5 /* movie4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2B973552715C0C50030BDB5 /* movie4.jpg */; };
+		E223618A2729D5CC00B932B8 /* movie1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E22361892729D5CC00B932B8 /* movie1.jpeg */; };
+		E223618C2729D68900B932B8 /* movie3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E223618B2729D68900B932B8 /* movie3.jpeg */; };
+		E223618E2729D68F00B932B8 /* movie4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E223618D2729D68E00B932B8 /* movie4.jpeg */; };
+		E22361902729D69500B932B8 /* movie2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E223618F2729D69500B932B8 /* movie2.jpeg */; };
 		E2B973722715EC180030BDB5 /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B973712715EC180030BDB5 /* Play.png */; };
 		E2B973742715EC1E0030BDB5 /* Toilet.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B973732715EC1E0030BDB5 /* Toilet.png */; };
 		E2B973762715EC240030BDB5 /* Eat.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B973752715EC240030BDB5 /* Eat.png */; };
@@ -56,10 +56,10 @@
 		C39C0AFF2724979F006F892E /* StartupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupVC.swift; sourceTree = "<group>"; };
 		C39C0B0527249D1E006F892E /* CalibrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationVC.swift; sourceTree = "<group>"; };
 		C39C0B0D2725A705006F892E /* bluetooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluetooth.png; sourceTree = "<group>"; };
-		E2B9734F2715BE980030BDB5 /* movie1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie1.jpg; sourceTree = "<group>"; };
-		E2B973512715BF1E0030BDB5 /* movie2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie2.jpg; sourceTree = "<group>"; };
-		E2B973532715C0BB0030BDB5 /* movie3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie3.jpg; sourceTree = "<group>"; };
-		E2B973552715C0C50030BDB5 /* movie4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie4.jpg; sourceTree = "<group>"; };
+		E22361892729D5CC00B932B8 /* movie1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie1.jpeg; sourceTree = "<group>"; };
+		E223618B2729D68900B932B8 /* movie3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie3.jpeg; sourceTree = "<group>"; };
+		E223618D2729D68E00B932B8 /* movie4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie4.jpeg; sourceTree = "<group>"; };
+		E223618F2729D69500B932B8 /* movie2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie2.jpeg; sourceTree = "<group>"; };
 		E2B973572715D0160030BDB5 /* ProjectBubba-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProjectBubba-Bridging-Header.h"; sourceTree = "<group>"; };
 		E2B973712715EC180030BDB5 /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play.png; sourceTree = "<group>"; };
 		E2B973732715EC1E0030BDB5 /* Toilet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Toilet.png; sourceTree = "<group>"; };
@@ -114,13 +114,13 @@
 				025EF1C0271250BE001F97C0 /* Assets.xcassets */,
 				025EF1C2271250BE001F97C0 /* LaunchScreen.storyboard */,
 				74E4AF60271536F700030DB9 /* Talk_Button.png */,
-				E2B973532715C0BB0030BDB5 /* movie3.jpg */,
-				E2B973552715C0C50030BDB5 /* movie4.jpg */,
+				E22361892729D5CC00B932B8 /* movie1.jpeg */,
+				E223618F2729D69500B932B8 /* movie2.jpeg */,
+				E223618B2729D68900B932B8 /* movie3.jpeg */,
+				E223618D2729D68E00B932B8 /* movie4.jpeg */,
 				74E4AF702716F9CA00030DB9 /* No.png */,
 				74E4AF722716F9DA00030DB9 /* Yes.png */,
-				E2B9734F2715BE980030BDB5 /* movie1.jpg */,
 				74E4AF622715370900030DB9 /* Actions_Button.png */,
-				E2B973512715BF1E0030BDB5 /* movie2.jpg */,
 				74E4AF642715371000030DB9 /* Watch_Button.png */,
 				C39C0B0D2725A705006F892E /* bluetooth.png */,
 				025EF1C5271250BE001F97C0 /* Info.plist */,
@@ -189,17 +189,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				025EF1C4271250BE001F97C0 /* LaunchScreen.storyboard in Resources */,
-				E2B973562715C0C50030BDB5 /* movie4.jpg in Resources */,
 				C39C0B0E2725A705006F892E /* bluetooth.png in Resources */,
 				74E4AF61271536F700030DB9 /* Talk_Button.png in Resources */,
+				E223618E2729D68F00B932B8 /* movie4.jpeg in Resources */,
 				74E4AF632715370900030DB9 /* Actions_Button.png in Resources */,
-				E2B973522715BF1E0030BDB5 /* movie2.jpg in Resources */,
 				E2B973762715EC240030BDB5 /* Eat.png in Resources */,
 				74E4AF652715371000030DB9 /* Watch_Button.png in Resources */,
-				E2B973542715C0BB0030BDB5 /* movie3.jpg in Resources */,
+				E223618A2729D5CC00B932B8 /* movie1.jpeg in Resources */,
+				E22361902729D69500B932B8 /* movie2.jpeg in Resources */,
 				025EF1C1271250BE001F97C0 /* Assets.xcassets in Resources */,
-				E2B973502715BE980030BDB5 /* movie1.jpg in Resources */,
 				74E4AF712716F9CA00030DB9 /* No.png in Resources */,
+				E223618C2729D68900B932B8 /* movie3.jpeg in Resources */,
 				74E4AF732716F9DA00030DB9 /* Yes.png in Resources */,
 				E2B973722715EC180030BDB5 /* Play.png in Resources */,
 				E2B973742715EC1E0030BDB5 /* Toilet.png in Resources */,
