@@ -9,8 +9,6 @@ import UIKit
 
 class TalkVC: UIViewController {
     @IBOutlet weak var yesNoLabel: UIButton!
-    var noImage = UIImage(named:"No")
-    var yesImage = UIImage(named:"Yes")
     var timer = Timer()
 
     override func viewDidLoad() {
@@ -19,12 +17,17 @@ class TalkVC: UIViewController {
     }
 
     @IBAction func sensorInput(_ sender: Any) {
-        self.yesNoLabel.setImage(yesImage, for: .normal)
+        self.yesNoLabel.configuration?.baseBackgroundColor = UIColor.green
+        self.yesNoLabel.setTitle("Yes", for: .normal)
+        self.yesNoLabel.titleLabel?.font =  UIFont(name: "Futura-Medium", size: 90)
+                 
         timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: false)
     }
     
     @objc func timerAction() {
-        self.yesNoLabel.setImage(noImage, for: .normal)
+        self.yesNoLabel.configuration?.baseBackgroundColor = UIColor.red
+        self.yesNoLabel.setTitle("No", for: .normal)
+        self.yesNoLabel.titleLabel?.font =  UIFont(name: "Futura-Medium", size: 90)
     }
     
 }
