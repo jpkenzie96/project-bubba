@@ -10,6 +10,7 @@ import UIKit
 class TalkVC: UIViewController {
     @IBOutlet weak var yesNoLabel: UIButton!
     var timer = Timer()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
