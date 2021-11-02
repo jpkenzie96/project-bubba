@@ -18,17 +18,16 @@ class TalkVC: UIViewController {
     }
 
     @IBAction func sensorInput(_ sender: Any) {
-        self.yesNoLabel.configuration?.baseBackgroundColor = UIColor.green
-        self.yesNoLabel.setTitle("Yes", for: .normal)
-        self.yesNoLabel.titleLabel?.font =  UIFont(name: "Futura-Medium", size: 90)
+        self.yesNoLabel.configuration?.background.backgroundColor = UIColor.green
+        self.yesNoLabel.configuration?.title = "Yes"
                  
         timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: false)
     }
     
     @objc func timerAction() {
-        self.yesNoLabel.configuration?.baseBackgroundColor = UIColor.red
-        self.yesNoLabel.setTitle("No", for: .normal)
-        self.yesNoLabel.titleLabel?.font =  UIFont(name: "Futura-Medium", size: 90)
+        self.yesNoLabel.configuration?.background.backgroundColor = UIColor.red
+        self.yesNoLabel.configuration?.title = "No"
+        
     }
     
 }
