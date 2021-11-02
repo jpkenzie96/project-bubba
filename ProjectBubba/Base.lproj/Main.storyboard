@@ -370,20 +370,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3v-tO-MZV">
-                                <rect key="frame" x="544" y="827" width="278.5" height="72.5"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Sensor Input" cornerStyle="medium">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="45"/>
-                                    <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="sensorInput:" destination="zI1-1f-GIo" eventType="touchUpInside" id="l4Q-Pp-ubs"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cNp-dF-0Sn">
                                 <rect key="frame" x="373" y="348" width="629" height="402"/>
                                 <constraints>
@@ -394,22 +380,33 @@
                                     <backgroundConfiguration key="background" image="movie1.jpeg" imageContentMode="scaleToFill"/>
                                 </buttonConfiguration>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNk-dB-PZd">
+                                <rect key="frame" x="548" y="858" width="279" height="73"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Sensor Input" cornerStyle="medium">
+                                    <fontDescription key="titleFontDescription" name="Futura-MediumItalic" family="Futura" pointSize="45"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseBackgroundColor" systemColor="systemGray2Color"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="SensorInput:" destination="B5M-Ns-ejE" eventType="touchUpInside" id="zZp-Hg-s2c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bTQ-Je-bjj"/>
                         <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="v3v-tO-MZV" firstAttribute="leading" secondItem="bTQ-Je-bjj" secondAttribute="leading" constant="544" id="Fi4-gn-tMN"/>
+                            <constraint firstItem="DNk-dB-PZd" firstAttribute="leading" secondItem="bTQ-Je-bjj" secondAttribute="leading" constant="548" id="DTP-zd-v22"/>
+                            <constraint firstItem="DNk-dB-PZd" firstAttribute="top" secondItem="cNp-dF-0Sn" secondAttribute="bottom" constant="108" id="NQH-sM-l9u"/>
                             <constraint firstItem="cNp-dF-0Sn" firstAttribute="leading" secondItem="bTQ-Je-bjj" secondAttribute="leading" constant="373" id="ZUM-zG-Bwo"/>
                             <constraint firstItem="mwi-uW-oEE" firstAttribute="top" secondItem="bTQ-Je-bjj" secondAttribute="top" constant="-24" id="bJh-y1-EEu"/>
                             <constraint firstItem="cNp-dF-0Sn" firstAttribute="top" secondItem="mwi-uW-oEE" secondAttribute="bottom" constant="103" id="doq-Qt-Bw8"/>
-                            <constraint firstItem="bTQ-Je-bjj" firstAttribute="bottom" secondItem="v3v-tO-MZV" secondAttribute="bottom" constant="104.5" id="huP-Qs-Y56"/>
                             <constraint firstItem="mwi-uW-oEE" firstAttribute="centerX" secondItem="u6J-YV-F6Z" secondAttribute="centerX" id="vdy-Pb-2md"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rxd-q0-Xo3"/>
                     <connections>
                         <outlet property="movie" destination="cNp-dF-0Sn" id="8ea-e9-Mf0"/>
-                        <outlet property="sensor" destination="v3v-tO-MZV" id="4j6-Tg-Qla"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zSc-mh-Qyj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -445,12 +442,13 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Itn-lQ-9E7">
-                                <rect key="frame" x="630" y="878" width="106" height="31"/>
+                                <rect key="frame" x="544" y="836.5" width="278.5" height="72.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sensor Input">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                     </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="45"/>
                                     <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -598,7 +596,7 @@
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="moon.zzz" catalog="system" width="115" height="128"/>
-        <image name="movie1.jpeg" width="320" height="180"/>
+        <image name="movie1.jpeg" width="1200" height="675"/>
         <image name="paintbrush.pointed" catalog="system" width="128" height="116"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="play.tv" catalog="system" width="128" height="97"/>
