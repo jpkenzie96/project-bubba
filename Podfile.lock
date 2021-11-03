@@ -1,0 +1,43 @@
+PODS:
+  - Bolts-Swift (1.5.0)
+  - iOSDFULibrary (4.10.3):
+    - ZIPFoundation (= 0.9.11)
+  - MetaWear (4.0.1):
+    - MetaWear/Core (= 4.0.1)
+  - MetaWear/AsyncUtils (4.0.1):
+    - MetaWear/Core
+  - MetaWear/Core (4.0.1):
+    - Bolts-Swift (~> 1)
+  - MetaWear/DFU (4.0.1):
+    - iOSDFULibrary (= 4.10.3)
+    - MetaWear/Core
+  - MetaWear/Mocks (4.0.1):
+    - MetaWear/Core
+  - MetaWear/UI (4.0.1):
+    - MetaWear/AsyncUtils
+    - MetaWear/Core
+  - ZIPFoundation (0.9.11)
+
+DEPENDENCIES:
+  - MetaWear (~> 4.0.1)
+  - MetaWear/AsyncUtils
+  - MetaWear/DFU
+  - MetaWear/Mocks
+  - MetaWear/UI
+
+SPEC REPOS:
+  trunk:
+    - Bolts-Swift
+    - iOSDFULibrary
+    - MetaWear
+    - ZIPFoundation
+
+SPEC CHECKSUMS:
+  Bolts-Swift: afbbaf8c8186e7f769be4afa656949c14087ba44
+  iOSDFULibrary: 7aade51a907d01ca9a87055003cd232b09efd78f
+  MetaWear: 35f29152e275456bdbfcd75eae8830f51cfec729
+  ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
+
+PODFILE CHECKSUM: e699c38ebb7fde55f58ebb280dedc42a52a475a1
+
+COCOAPODS: 1.11.2

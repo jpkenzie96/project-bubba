@@ -1,0 +1,6 @@
+framework module Pods_ProjectBubba {
+  umbrella header "Pods-ProjectBubba-umbrella.h"
+
+  export *
+  module * { export * }
+}
