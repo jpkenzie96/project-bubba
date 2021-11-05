@@ -15,7 +15,7 @@ class SettingsVC: UIViewController{
     @IBOutlet weak var textSelectionButton: UIButton!
     
     let textColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
-    let backgroundColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
+    let backgroundColorChoices = ["Red", "Black", "Gray", "White", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
     
     override func viewDidLoad() {
         textColorSelection.isHidden = true
@@ -34,7 +34,7 @@ class SettingsVC: UIViewController{
     }
     @IBOutlet weak var textColorChanged: UIButton!
     @IBAction func textColorChanged(_ sender: Any) {
-        self.performSegue(withIdentifier: "SettingsViewSegue", sender: self)
+//        self.performSegue(withIdentifier: "SettingsViewSegue", sender: self)
     }
     
     
@@ -98,7 +98,7 @@ extension SettingsVC: UIPickerViewDelegate {
         }
         else {
             textSelectionButton.setTitle(textColorChoices[row], for: .normal)
-            UILabel.appearance(whenContainedInInstancesOf: [UIView.self]).textColor = SystemColor(color: backgroundColorChoices[row])
+            UILabel.appearance(whenContainedInInstancesOf: [UIView.self]).textColor = SystemColor(color: textColorChoices[row])
             UserDefaults.standard.set(row, forKey: "textPickerViewRow")
             pickerView.isHidden = true
         }

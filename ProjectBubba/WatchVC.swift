@@ -17,7 +17,7 @@ class WatchVC: UIViewController{
     var movie3 = UIImage(named:"movie3.jpeg")
     var movie4 = UIImage(named:"movie4.jpeg")
     let textColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
-    let backgroundColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
+    let backgroundColorChoices = ["Red", "Black", "Gray", "White", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -14,7 +14,7 @@ class ActionsVC: UIViewController {
     @IBOutlet weak var action3: UIButton!
     @IBOutlet weak var action4: UIButton!
     let textColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
-    let backgroundColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
+    let backgroundColorChoices = ["Red", "Black", "Gray", "White", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
     var timer = Timer()
     var count: Int = 0
     
