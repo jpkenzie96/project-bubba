@@ -10,11 +10,14 @@ import UIKit
 class TalkVC: UIViewController {
     @IBOutlet weak var yesNoLabel: UIButton!
     var timer = Timer()
-    
+    let textColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
+    let backgroundColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let row = UserDefaults.standard.integer(forKey: "backgroundPickerViewRow")
+        view.backgroundColor = SystemColor(color: backgroundColorChoices[row])
     }
 
     @IBAction func sensorInput(_ sender: Any) {

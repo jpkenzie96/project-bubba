@@ -16,13 +16,16 @@ class WatchVC: UIViewController{
     var movie2 = UIImage(named:"movie2.jpeg")
     var movie3 = UIImage(named:"movie3.jpeg")
     var movie4 = UIImage(named:"movie4.jpeg")
+    let textColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
+    let backgroundColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-		
+        let row = UserDefaults.standard.integer(forKey: "backgroundPickerViewRow")
+        view.backgroundColor = SystemColor(color: backgroundColorChoices[row])
 		//sensor.addTarget(self, action: "SensorInput", for: .touchUpInside)
         timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
-	
+        
         // Do any additional setup after loading the view.
     }
     

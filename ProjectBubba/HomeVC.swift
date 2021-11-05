@@ -8,10 +8,14 @@
 import UIKit
 
 class HomeVC: UIViewController {
-
+    let textColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
+    let backgroundColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let row = UserDefaults.standard.integer(forKey: "backgroundPickerViewRow")
+        view.backgroundColor = SystemColor(color: backgroundColorChoices[row])
     }
 
     @IBAction func talkViewButtonPressed(_ sender: Any) {

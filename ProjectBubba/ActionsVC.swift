@@ -13,13 +13,16 @@ class ActionsVC: UIViewController {
     @IBOutlet weak var action2: UIButton!
     @IBOutlet weak var action3: UIButton!
     @IBOutlet weak var action4: UIButton!
+    let textColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
+    let backgroundColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
     var timer = Timer()
     var count: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        let row = UserDefaults.standard.integer(forKey: "backgroundPickerViewRow")
+        view.backgroundColor = SystemColor(color: backgroundColorChoices[row])
         timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
         
     }

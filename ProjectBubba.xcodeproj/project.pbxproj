@@ -25,6 +25,7 @@
 		C39C0B002724979F006F892E /* StartupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39C0AFF2724979F006F892E /* StartupVC.swift */; };
 		C39C0B0627249D1E006F892E /* CalibrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39C0B0527249D1E006F892E /* CalibrationVC.swift */; };
 		C39C0B0E2725A705006F892E /* bluetooth.png in Resources */ = {isa = PBXBuildFile; fileRef = C39C0B0D2725A705006F892E /* bluetooth.png */; };
+		C3BFFBB727350E9400DCA930 /* home1.png in Resources */ = {isa = PBXBuildFile; fileRef = C3BFFBB627350E9400DCA930 /* home1.png */; };
 		E223618A2729D5CC00B932B8 /* movie1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E22361892729D5CC00B932B8 /* movie1.jpeg */; };
 		E223618C2729D68900B932B8 /* movie3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E223618B2729D68900B932B8 /* movie3.jpeg */; };
 		E223618E2729D68F00B932B8 /* movie4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E223618D2729D68E00B932B8 /* movie4.jpeg */; };
@@ -56,6 +57,7 @@
 		C39C0AFF2724979F006F892E /* StartupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupVC.swift; sourceTree = "<group>"; };
 		C39C0B0527249D1E006F892E /* CalibrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationVC.swift; sourceTree = "<group>"; };
 		C39C0B0D2725A705006F892E /* bluetooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluetooth.png; sourceTree = "<group>"; };
+		C3BFFBB627350E9400DCA930 /* home1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home1.png; path = ../../../../Downloads/home1.png; sourceTree = "<group>"; };
 		E22361892729D5CC00B932B8 /* movie1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie1.jpeg; sourceTree = "<group>"; };
 		E223618B2729D68900B932B8 /* movie3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie3.jpeg; sourceTree = "<group>"; };
 		E223618D2729D68E00B932B8 /* movie4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie4.jpeg; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				74E4AF682715422300030DB9 /* TalkVC.swift */,
 				74E4AF6A2715422D00030DB9 /* WatchVC.swift */,
 				025EF1BD271250BC001F97C0 /* Main.storyboard */,
+				C3BFFBB627350E9400DCA930 /* home1.png */,
 				C39C0AFF2724979F006F892E /* StartupVC.swift */,
 				C39C0B0527249D1E006F892E /* CalibrationVC.swift */,
 				0255F82527164DAB004742FB /* SettingsVC.swift */,
@@ -193,6 +196,7 @@
 				74E4AF61271536F700030DB9 /* Talk_Button.png in Resources */,
 				E223618E2729D68F00B932B8 /* movie4.jpeg in Resources */,
 				74E4AF632715370900030DB9 /* Actions_Button.png in Resources */,
+				C3BFFBB727350E9400DCA930 /* home1.png in Resources */,
 				E2B973762715EC240030BDB5 /* Eat.png in Resources */,
 				74E4AF652715371000030DB9 /* Watch_Button.png in Resources */,
 				E223618A2729D5CC00B932B8 /* movie1.jpeg in Resources */,
