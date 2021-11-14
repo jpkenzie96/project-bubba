@@ -4,7 +4,6 @@
 //
 //  Created by Joseph Kenzie on 10/12/21.
 //
-
 import UIKit
 
 class SettingsVC: UIViewController{
@@ -14,15 +13,10 @@ class SettingsVC: UIViewController{
     @IBOutlet weak var backgroundSelectionButton: UIButton!
     @IBOutlet weak var textSelectionButton: UIButton!
     
-    var textInd = -1
-    var choice = ""
-    var bgInd = -1
-    var textColorChoices: [String] = ["Black", "Gray", "Red", "Orange", "Green", "Blue", "Purple", "Pink"]
-    var backgroundColorChoices: [String] = ["Red", "Black", "Gray", "White", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
+    let textColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
+    let backgroundColorChoices = ["Red", "Black", "Gray", "White", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
     
     override func viewDidLoad() {
-        textColorChoices = ["Black", "Gray", "Red", "Orange", "Green", "Blue", "Purple", "Pink"]
-        backgroundColorChoices = ["Red", "Black", "Gray", "White", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
         textColorSelection.isHidden = true
         backgroundColorSelection.isHidden = true
         super.viewDidLoad()
@@ -37,6 +31,7 @@ class SettingsVC: UIViewController{
         textSelectionButton.setTitle(textColorChoices[row2], for: .normal)
         backgroundColorSelection.setValue(SystemColor(color: textColorChoices[row2]), forKeyPath: "textColor")
         textColorSelection.setValue(SystemColor(color: textColorChoices[row2]), forKeyPath: "textColor")
+        
     }
     
     @IBAction func selectionMade(_ sender: UIButton) {
@@ -58,9 +53,6 @@ class SettingsVC: UIViewController{
             }
         }
     }
-
-
-
 }
 
 extension SettingsVC: UIPickerViewDataSource {
@@ -76,8 +68,6 @@ extension SettingsVC: UIPickerViewDataSource {
             return textColorChoices.count
         }
     }
-    
-    
 }
 
 extension SettingsVC: UIPickerViewDelegate {
@@ -91,25 +81,9 @@ extension SettingsVC: UIPickerViewDelegate {
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 1 {
-            backgroundSelectionButton.setTitle(backgroundColorChoices[row], for:.normal)
+            backgroundSelectionButton.setTitle(backgroundColorChoices[row], for: .normal)
             self.view.backgroundColor = SystemColor(color: backgroundColorChoices[row])
             UserDefaults.standard.set(row, forKey: "backgroundPickerViewRow")
-            if bgInd >= 0 {
-                backgroundColorChoices.insert(choice, at:bgInd)
-                if row >= bgInd {
-                    choice = backgroundColorChoices[row + 1]
-                }
-                else {
-                    choice = backgroundColorChoices[row]
-                }
-            }
-            else {
-                choice = backgroundColorChoices[row]
-            }
-            if textColorChoices.contains(choice) {
-                textInd = textColorChoices.firstIndex(of: choice)!
-                textColorChoices.remove(at: textInd)
-            }
             pickerView.isHidden = true
         }
         else {
@@ -117,25 +91,8 @@ extension SettingsVC: UIPickerViewDelegate {
             UILabel.appearance(whenContainedInInstancesOf: [UIView.self]).textColor = SystemColor(color: textColorChoices[row])
             UIButton.appearance(whenContainedInInstancesOf: [UIView.self]).setTitleColor(SystemColor(color: textColorChoices[row]), for: .normal)
             UserDefaults.standard.set(row, forKey: "textPickerViewRow")
-//            view.setValue(SystemColor(color: textColorChoices[row]), forKeyPath: "textColor")
             backgroundColorSelection.setValue(SystemColor(color: textColorChoices[row]), forKeyPath: "textColor")
             textColorSelection.setValue(SystemColor(color: textColorChoices[row]), forKeyPath: "textColor")
-            if textInd >= 0 {
-                textColorChoices.insert(choice, at: textInd)
-                if row >= textInd {
-                    choice = textColorChoices[row + 1]
-                }
-                else {
-                    choice = textColorChoices[row]
-                }
-            }
-            else{
-                choice = textColorChoices[row]
-            }
-            if backgroundColorChoices.contains(choice) {
-                bgInd = backgroundColorChoices.firstIndex(of: choice)!
-                backgroundColorChoices.remove(at: bgInd)
-            }
             pickerView.isHidden = true
         }
     }
