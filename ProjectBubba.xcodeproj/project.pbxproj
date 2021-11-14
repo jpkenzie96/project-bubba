@@ -22,6 +22,7 @@
 		74E4AF6B2715422D00030DB9 /* WatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4AF6A2715422D00030DB9 /* WatchVC.swift */; };
 		74E4AF712716F9CA00030DB9 /* No.png in Resources */ = {isa = PBXBuildFile; fileRef = 74E4AF702716F9CA00030DB9 /* No.png */; };
 		74E4AF732716F9DA00030DB9 /* Yes.png in Resources */ = {isa = PBXBuildFile; fileRef = 74E4AF722716F9DA00030DB9 /* Yes.png */; };
+		C32DBD872741700500DD00A9 /* backbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = C32DBD862741700500DD00A9 /* backbutton.png */; };
 		C39C0B002724979F006F892E /* StartupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39C0AFF2724979F006F892E /* StartupVC.swift */; };
 		C39C0B0627249D1E006F892E /* CalibrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39C0B0527249D1E006F892E /* CalibrationVC.swift */; };
 		C39C0B0E2725A705006F892E /* bluetooth.png in Resources */ = {isa = PBXBuildFile; fileRef = C39C0B0D2725A705006F892E /* bluetooth.png */; };
@@ -54,6 +55,7 @@
 		74E4AF6A2715422D00030DB9 /* WatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchVC.swift; sourceTree = "<group>"; };
 		74E4AF702716F9CA00030DB9 /* No.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = No.png; sourceTree = "<group>"; };
 		74E4AF722716F9DA00030DB9 /* Yes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Yes.png; sourceTree = "<group>"; };
+		C32DBD862741700500DD00A9 /* backbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbutton.png; sourceTree = "<group>"; };
 		C39C0AFF2724979F006F892E /* StartupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupVC.swift; sourceTree = "<group>"; };
 		C39C0B0527249D1E006F892E /* CalibrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationVC.swift; sourceTree = "<group>"; };
 		C39C0B0D2725A705006F892E /* bluetooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluetooth.png; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				E2B973712715EC180030BDB5 /* Play.png */,
+				C32DBD862741700500DD00A9 /* backbutton.png */,
 				E2B973772715EC290030BDB5 /* Sleep.png */,
 				E2B973752715EC240030BDB5 /* Eat.png */,
 				025EF1B7271250BC001F97C0 /* AppDelegate.swift */,
@@ -201,6 +204,7 @@
 				E223618A2729D5CC00B932B8 /* movie1.jpeg in Resources */,
 				E22361902729D69500B932B8 /* movie2.jpeg in Resources */,
 				025EF1C1271250BE001F97C0 /* Assets.xcassets in Resources */,
+				C32DBD872741700500DD00A9 /* backbutton.png in Resources */,
 				C3BFFBB9273575B100DCA930 /* home1.png in Resources */,
 				74E4AF712716F9CA00030DB9 /* No.png in Resources */,
 				E223618C2729D68900B932B8 /* movie3.jpeg in Resources */,
