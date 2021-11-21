@@ -1,0 +1,58 @@
+use_frameworks!
+
+abstract_target 'MetaWear' do
+    abstract_target 'MetaWear-iOS' do
+        platform :ios, '14.0'
+        ## LOCAL
+	pod 'MetaWear', :subspecs => ['UI', 'AsyncUtils', 'DFU'], :path => '../'
+        
+        target 'MetaWearIntegrationTestHost-iOS' do
+            target 'MetaWearIntegrationTests-iOS' do
+                inherit! :search_paths
+            end
+        end
+        
+        target 'MetaWearUnitTests-iOS' do
+        end
+    end
+    
+    abstract_target 'MetaWear-macOS' do
+        platform :osx, '11.0'
+        ## LOCAL
+	pod 'MetaWear', :subspecs => ['UI', 'AsyncUtils', 'DFU'], :path => '../'
+        
+        target 'MetaWearIntegrationTestHost-macOS' do
+            target 'MetaWearIntegrationTests-macOS' do
+                inherit! :search_paths
+            end
+        end
+        
+        target 'MetaWearUnitTests-macOS' do
+        end
+    end
+    
+    abstract_target 'MetaWear-tvOS' do
+        platform :tvos, '14.0'
+        ## LOCAL
+        pod 'MetaWear', :subspecs => ['UI', 'AsyncUtils'], :path => '../'
+
+        target 'MetaWearIntegrationTestHost-tvOS' do
+            target 'MetaWearIntegrationTests-tvOS' do
+                inherit! :search_paths
+            end
+        end
+    
+        target 'MetaWearUnitTests-tvOS' do
+        end
+    end
+    
+    
+    abstract_target 'MetaWear-watchOS' do
+        platform :watchos, '7.0'
+        ## LOCAL
+        pod 'MetaWear', :subspecs => ['UI', 'AsyncUtils'], :path => '../'
+        
+        target 'MetaWearIntegrationTestHost-watchOS Extension' do
+        end
+    end
+end

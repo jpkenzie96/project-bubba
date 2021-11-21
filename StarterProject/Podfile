@@ -1,0 +1,29 @@
+abstract_target 'Starter' do
+  use_frameworks!
+  # Pods for all targets
+  ## LOCAL
+  pod 'MetaWear', :subspecs => ['Core', 'AsyncUtils', 'UI'], :path => '../'
+  ## COCOAPODS
+  #pod 'MetaWear'
+
+  target 'iOS' do
+    platform :ios, '14.5'
+
+    # Pods for iOS
+    pod 'MBProgressHUD'
+  end
+
+  target 'macOS' do
+    platform :osx, '11.3'
+
+    # Pods for macOS
+  end
+
+  target 'tvOS' do
+    platform :tvos, '14.5'
+
+    # Pods for tvOS
+    pod 'MBProgressHUD'
+  end
+end
+
