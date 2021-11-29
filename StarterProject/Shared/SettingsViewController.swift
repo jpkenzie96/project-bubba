@@ -16,6 +16,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var textColorSelection: UIPickerView!
     @IBOutlet weak var backgroundSelectionButton: UIButton!
     @IBOutlet weak var textSelectionButton: UIButton!
+    @IBOutlet weak var scrollingTimeSlider: UISlider!
+    @IBOutlet weak var scrollingTimeLabel: UILabel!
     
     let textColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
     let backgroundColorChoices = ["Red", "Black", "Gray", "White", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
@@ -31,6 +33,7 @@ class SettingsViewController: UIViewController {
         backgroundColorSelection.delegate = self
         textColorSelection.dataSource = self
         textColorSelection.delegate = self
+        scrollingTimeLabel.text = "\(scrollingTimeSlider.value)" + " sec"
         let row = UserDefaults.standard.integer(forKey: "backgroundPickerViewRow")
         view.backgroundColor = SystemColor(color: backgroundColorChoices[row])
         //backgroundSelectionButton.setTitle(backgroundColorChoices[row], for: .normal)
@@ -41,6 +44,11 @@ class SettingsViewController: UIViewController {
         backgroundColorSelection.setValue(SystemColor(color: textColorChoices[row2]), forKeyPath: "textColor")
         textColorSelection.setValue(SystemColor(color: textColorChoices[row2]), forKeyPath: "textColor")
         
+    }
+    
+    
+    @IBAction func sliderValueChanged(_ sender: Any) {
+        scrollingTimeLabel.text = "\(scrollingTimeSlider.value)" + " sec"
     }
     
     

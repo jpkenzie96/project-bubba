@@ -682,10 +682,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YPq-08-mkj"/>
-        <segue reference="cfh-ti-2xn"/>
+        <segue reference="Oa9-VC-gwW"/>
         <segue reference="vN8-8c-yNx"/>
-        <segue reference="O79-gd-9dj"/>
+        <segue reference="3Uh-7Z-IUD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
