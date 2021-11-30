@@ -84,7 +84,7 @@ class ActionsViewController: UIViewController {
         self.startButton.configuration?.background.backgroundColor = UIColor.blue
         
         let board = device.board
-            guard mbl_mw_metawearboard_lookup_module(board, MBL_MW_MODULE_ACCELEROMETER) != MODULE_TYPE_NA else {
+            guard mbl_mw_metawearboard_lookup_module(board, MBL_MW_MODULE_ACCELEROMETER) != MBL_MW_MODULE_TYPE_NA else {
                 print("No accelerometer")
                 return
             }
