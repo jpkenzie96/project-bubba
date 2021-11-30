@@ -1,6 +1,6 @@
 {
   "name": "MetaWear",
-  "version": "4.1.0",
+  "version": "4.1.3",
   "license": {
     "type": "Commercial",
     "text": "See https://www.mbientlab.com/terms/",
@@ -14,7 +14,7 @@
   },
   "source": {
     "git": "https://github.com/mbientlab/MetaWear-SDK-iOS-macOS-tvOS.git",
-    "tag": "4.1.0",
+    "tag": "4.1.3",
     "submodules": true
   },
   "platforms": {
