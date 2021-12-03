@@ -9,6 +9,7 @@
 import UIKit
 import MetaWear
 import MetaWearCpp
+import AVFoundation
 
 @available(iOS 15.0, *)
 class ActionsViewController: UIViewController {
@@ -19,6 +20,7 @@ class ActionsViewController: UIViewController {
     @IBOutlet weak var deviceStatus: UILabel!
     @IBOutlet weak var startButton: UIButton!
     var timer = Timer()
+	var timer2 = Timer()
     var count: Int = 0
     
     let textColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
@@ -26,6 +28,9 @@ class ActionsViewController: UIViewController {
     
     var device: MetaWear!
     
+	let synthesizer = AVSpeechSynthesizer()
+	var confirm = false
+	var currentaction = ""
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
@@ -103,30 +108,43 @@ class ActionsViewController: UIViewController {
     }
     
     func sensorInput(){
-        timer.invalidate()
-        // Stop getting Data from sensor
-        let board = device.board
-            let signal = mbl_mw_acc_get_acceleration_data_signal(board)
+		if (self.confirm){
+			timer.invalidate()
+			// Stop getting Data from sensor
+			let board = device.board
+			let signal = mbl_mw_acc_get_acceleration_data_signal(board)
             mbl_mw_acc_stop(board)
             mbl_mw_acc_disable_acceleration_sampling(board)
             mbl_mw_datasignal_unsubscribe(signal)
         
-        DispatchQueue.main.async {
-            self.startButton.configuration?.background.backgroundColor = UIColor.white
+			DispatchQueue.main.async {
+				self.startButton.configuration?.background.backgroundColor = UIColor.white
             
-            switch self.count {
-            case 0:
-                self.action4.configuration?.baseBackgroundColor = UIColor.blue
-            case 1:
-                self.action1.configuration?.baseBackgroundColor = UIColor.blue
-            case 2:
-                self.action2.configuration?.baseBackgroundColor = UIColor.blue
-            case 3:
-                self.action3.configuration?.baseBackgroundColor = UIColor.blue
-            default:
-                self.action1.configuration?.baseBackgroundColor = UIColor.blue
-            }
-        }
+				switch self.count {
+				case 0:
+					self.action4.configuration?.baseBackgroundColor = UIColor.blue
+				case 1:
+					self.action1.configuration?.baseBackgroundColor = UIColor.blue
+				case 2:
+					self.action2.configuration?.baseBackgroundColor = UIColor.blue
+				case 3:
+					self.action3.configuration?.baseBackgroundColor = UIColor.blue
+				default:
+					self.action1.configuration?.baseBackgroundColor = UIColor.blue
+				}
+			}
+		}
+		else{
+			timer.invalidate()
+			timer2 = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(timerWait), userInfo: nil, repeats: false)
+			let confirmspeak = AVSpeechUtterance(string: "Confirm Selection of")
+			confirmspeak.voice = AVSpeechSynthesisVoice(language: "en-US")
+			synthesizer.speak(confirmspeak)
+			let moviespeak = AVSpeechUtterance(string: self.currentaction)
+			moviespeak.voice = AVSpeechSynthesisVoice(language: "en-US")
+			synthesizer.speak(moviespeak)
+			self.confirm = true
+		}
     }
     
     @objc func timerUpdate() {
@@ -135,15 +153,31 @@ class ActionsViewController: UIViewController {
         case 0:
             self.action4.configuration?.baseBackgroundColor = UIColor.white
             self.action1.configuration?.baseBackgroundColor = UIColor.green
+			self.currentaction = "sleep"
+			let sleep = AVSpeechUtterance(string: self.currentaction)
+			sleep.voice = AVSpeechSynthesisVoice(language: "en-US")
+			synthesizer.speak(sleep)
         case 1:
             self.action1.configuration?.baseBackgroundColor = UIColor.white
             self.action2.configuration?.baseBackgroundColor = UIColor.green
+			self.currentaction = "draw"
+			let draw = AVSpeechUtterance(string: self.currentaction)
+			draw.voice = AVSpeechSynthesisVoice(language: "en-US")
+			synthesizer.speak(draw)
         case 2:
             self.action2.configuration?.baseBackgroundColor = UIColor.white
             self.action3.configuration?.baseBackgroundColor = UIColor.green
+			self.currentaction = "play"
+			let play = AVSpeechUtterance(string: self.currentaction)
+			play.voice = AVSpeechSynthesisVoice(language: "en-US")
+			synthesizer.speak(play)
         case 3:
             self.action3.configuration?.baseBackgroundColor = UIColor.white
             self.action4.configuration?.baseBackgroundColor = UIColor.green
+			self.currentaction = "read"
+			let read = AVSpeechUtterance(string: self.currentaction)
+			read.voice = AVSpeechSynthesisVoice(language: "en-US")
+			synthesizer.speak(read)
         default:
             self.action1.configuration?.baseBackgroundColor = UIColor.white
             self.action2.configuration?.baseBackgroundColor = UIColor.white
@@ -154,5 +188,12 @@ class ActionsViewController: UIViewController {
         count += 1
         
     }
+	@objc func timerWait() {
+		self.confirm = false;
+		timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
+	}
+	@IBAction func back(_ sender: UIButton) {
+		timer.invalidate();
+	}
     
 }

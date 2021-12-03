@@ -31,6 +31,10 @@
 		E223618C2729D68900B932B8 /* movie3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E223618B2729D68900B932B8 /* movie3.jpeg */; };
 		E223618E2729D68F00B932B8 /* movie4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E223618D2729D68E00B932B8 /* movie4.jpeg */; };
 		E22361902729D69500B932B8 /* movie2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E223618F2729D69500B932B8 /* movie2.jpeg */; };
+		E29E322F2758180C00BC4282 /* movie1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E29E322E2758180B00BC4282 /* movie1.mp3 */; };
+		E29E32332758181A00BC4282 /* movie2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E29E32302758181900BC4282 /* movie2.mp3 */; };
+		E29E32352758181A00BC4282 /* movie4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E29E32322758181900BC4282 /* movie4.mp3 */; };
+		E29E323B27584D7000BC4282 /* movie3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E29E323A27584D7000BC4282 /* movie3.mp3 */; };
 		E2B973722715EC180030BDB5 /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B973712715EC180030BDB5 /* Play.png */; };
 		E2B973742715EC1E0030BDB5 /* Toilet.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B973732715EC1E0030BDB5 /* Toilet.png */; };
 		E2B973762715EC240030BDB5 /* Eat.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B973752715EC240030BDB5 /* Eat.png */; };
@@ -64,6 +68,10 @@
 		E223618B2729D68900B932B8 /* movie3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie3.jpeg; sourceTree = "<group>"; };
 		E223618D2729D68E00B932B8 /* movie4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie4.jpeg; sourceTree = "<group>"; };
 		E223618F2729D69500B932B8 /* movie2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie2.jpeg; sourceTree = "<group>"; };
+		E29E322E2758180B00BC4282 /* movie1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = movie1.mp3; sourceTree = "<group>"; };
+		E29E32302758181900BC4282 /* movie2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = movie2.mp3; sourceTree = "<group>"; };
+		E29E32322758181900BC4282 /* movie4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = movie4.mp3; sourceTree = "<group>"; };
+		E29E323A27584D7000BC4282 /* movie3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = movie3.mp3; sourceTree = "<group>"; };
 		E2B973572715D0160030BDB5 /* ProjectBubba-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProjectBubba-Bridging-Header.h"; sourceTree = "<group>"; };
 		E2B973712715EC180030BDB5 /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play.png; sourceTree = "<group>"; };
 		E2B973732715EC1E0030BDB5 /* Toilet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Toilet.png; sourceTree = "<group>"; };
@@ -101,6 +109,10 @@
 		025EF1B6271250BC001F97C0 /* ProjectBubba */ = {
 			isa = PBXGroup;
 			children = (
+				E29E32302758181900BC4282 /* movie2.mp3 */,
+				E29E323A27584D7000BC4282 /* movie3.mp3 */,
+				E29E32322758181900BC4282 /* movie4.mp3 */,
+				E29E322E2758180B00BC4282 /* movie1.mp3 */,
 				E2B973712715EC180030BDB5 /* Play.png */,
 				C32DBD862741700500DD00A9 /* backbutton.png */,
 				E2B973772715EC290030BDB5 /* Sleep.png */,
@@ -195,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				025EF1C4271250BE001F97C0 /* LaunchScreen.storyboard in Resources */,
+				E29E322F2758180C00BC4282 /* movie1.mp3 in Resources */,
 				C39C0B0E2725A705006F892E /* bluetooth.png in Resources */,
 				74E4AF61271536F700030DB9 /* Talk_Button.png in Resources */,
 				E223618E2729D68F00B932B8 /* movie4.jpeg in Resources */,
@@ -203,8 +216,10 @@
 				74E4AF652715371000030DB9 /* Watch_Button.png in Resources */,
 				E223618A2729D5CC00B932B8 /* movie1.jpeg in Resources */,
 				E22361902729D69500B932B8 /* movie2.jpeg in Resources */,
+				E29E32332758181A00BC4282 /* movie2.mp3 in Resources */,
 				025EF1C1271250BE001F97C0 /* Assets.xcassets in Resources */,
 				C32DBD872741700500DD00A9 /* backbutton.png in Resources */,
+				E29E32352758181A00BC4282 /* movie4.mp3 in Resources */,
 				C3BFFBB9273575B100DCA930 /* home1.png in Resources */,
 				74E4AF712716F9CA00030DB9 /* No.png in Resources */,
 				E223618C2729D68900B932B8 /* movie3.jpeg in Resources */,
@@ -212,6 +227,7 @@
 				E2B973722715EC180030BDB5 /* Play.png in Resources */,
 				E2B973742715EC1E0030BDB5 /* Toilet.png in Resources */,
 				025EF1BF271250BC001F97C0 /* Main.storyboard in Resources */,
+				E29E323B27584D7000BC4282 /* movie3.mp3 in Resources */,
 				E2B973782715EC2A0030BDB5 /* Sleep.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
