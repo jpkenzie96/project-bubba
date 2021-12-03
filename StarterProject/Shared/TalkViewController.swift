@@ -95,7 +95,7 @@ class TalkViewController: UIViewController {
             mbl_mw_datasignal_subscribe(signal, bridge(obj: self)) { (context, data) in
                 let contBridge: TalkViewController = bridge(ptr: context!)
                 let obj: MblMwCartesianFloat = data!.pointee.valueAs()
-                if ((abs(obj.x)>0.7) || (abs(obj.y)>0.7)){
+                if ((abs(obj.x)>0.9) || (abs(obj.y)>0.9)){
                     //print(obj.x, obj.y, obj.z)
                     print("MOVEMENT DETECTED")
                     contBridge.sensorInput()
@@ -136,6 +136,8 @@ class TalkViewController: UIViewController {
         self.yes = false;
         self.yesNoLabel.configuration?.background.backgroundColor = UIColor.red
         self.yesNoLabel.configuration?.title = "No"
+        let nospeak = AVSpeechUtterance(string: "no")
+        self.synthesizer.speak(nospeak)
     }
     
 }

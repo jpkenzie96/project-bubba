@@ -79,6 +79,8 @@ class ActionsViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        timer.invalidate()
+        timer2.invalidate()
         device.flashLED(color: .red, intensity: 1.0, _repeat: 3)
         mbl_mw_debug_disconnect(device.board)
     }
