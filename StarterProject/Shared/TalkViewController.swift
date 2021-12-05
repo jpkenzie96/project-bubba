@@ -28,6 +28,7 @@ class TalkViewController: UIViewController {
     let backgroundColorChoices = ["Red", "Black", "Gray", "White", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
     
     var device: MetaWear!
+    var scrollTime: Int!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);

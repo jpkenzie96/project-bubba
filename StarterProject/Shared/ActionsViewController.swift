@@ -27,6 +27,7 @@ class ActionsViewController: UIViewController {
     let backgroundColorChoices = ["Red", "Black", "Gray", "White", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
     
     var device: MetaWear!
+    var scrollTime: Int!
     
 	let synthesizer = AVSpeechSynthesizer()
 	var confirm = false
@@ -38,7 +39,7 @@ class ActionsViewController: UIViewController {
         let row = UserDefaults.standard.integer(forKey: "backgroundPickerViewRow")
         view.backgroundColor = SystemColor(color: backgroundColorChoices[row])
         
-        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: Double(scrollTime), target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
         
         self.updateLabel("Restoring")
         if let state = DeviceState.loadForDevice(device) {
@@ -138,7 +139,7 @@ class ActionsViewController: UIViewController {
 		}
 		else{
 			timer.invalidate()
-			timer2 = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(timerWait), userInfo: nil, repeats: false)
+			timer2 = Timer.scheduledTimer(timeInterval: Double(scrollTime), target: self, selector: #selector(timerWait), userInfo: nil, repeats: false)
 			let confirmspeak = AVSpeechUtterance(string: "Confirm Selection of")
 			confirmspeak.voice = AVSpeechSynthesisVoice(language: "en-US")
 			synthesizer.speak(confirmspeak)
@@ -192,7 +193,7 @@ class ActionsViewController: UIViewController {
     }
 	@objc func timerWait() {
 		self.confirm = false;
-		timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
+		timer = Timer.scheduledTimer(timeInterval: Double(scrollTime), target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
 	}
 	@IBAction func back(_ sender: UIButton) {
 		timer.invalidate();

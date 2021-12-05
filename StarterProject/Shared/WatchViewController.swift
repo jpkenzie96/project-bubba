@@ -29,6 +29,7 @@ class WatchViewController: UIViewController {
     
     @IBOutlet weak var deviceStatus: UILabel!
     var device: MetaWear!
+    var scrollTime: Int!
 	
 	var audioPlayer: AVAudioPlayer?
 	var confirm = false
@@ -90,7 +91,7 @@ class WatchViewController: UIViewController {
         self.startButton.configuration?.background.backgroundColor = UIColor.blue
         
         // Watch Functionality
-        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: Double(scrollTime), target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
         
         
         // Sensor Function
@@ -191,7 +192,7 @@ class WatchViewController: UIViewController {
     }
 	@objc func timerWait() {
 		self.confirm = false;
-		timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
+		timer = Timer.scheduledTimer(timeInterval: Double(scrollTime), target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
 	}
     
     func sensorInput(){
@@ -201,7 +202,7 @@ class WatchViewController: UIViewController {
 		else{
 			timer.invalidate()
 			audioPlayer?.stop()
-			timer2 = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(timerWait), userInfo: nil, repeats: false)
+			timer2 = Timer.scheduledTimer(timeInterval: Double(scrollTime), target: self, selector: #selector(timerWait), userInfo: nil, repeats: false)
 			let confirmspeak = AVSpeechUtterance(string: "Confirm Selection of")
 			confirmspeak.voice = AVSpeechSynthesisVoice(language: "en-US")
 			synthesizer.speak(confirmspeak)

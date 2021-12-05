@@ -23,6 +23,7 @@ class SettingsViewController: UIViewController {
     let backgroundColorChoices = ["Red", "Black", "Gray", "White", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
     
     var device: MetaWear!
+    var scrollTime: Int!
     
     override func viewDidLoad() {
         
@@ -48,6 +49,7 @@ class SettingsViewController: UIViewController {
     
     
     @IBAction func sliderValueChanged(_ sender: Any) {
+        scrollTime = Int(scrollingTimeSlider.value)
         scrollingTimeLabel.text = "\(scrollingTimeSlider.value)" + " sec"
     }
     
@@ -69,6 +71,17 @@ class SettingsViewController: UIViewController {
 
                 //textColorSelection.isHidden = true
             }
+        }
+    }
+    
+    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        if let homeController = segue.destination as? HomeViewController {
+            homeController.scrollTime = scrollTime
         }
     }
     
