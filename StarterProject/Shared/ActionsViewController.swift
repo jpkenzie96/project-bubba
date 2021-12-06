@@ -22,7 +22,7 @@ class ActionsViewController: UIViewController {
     var timer = Timer()
 	var timer2 = Timer()
     var count: Int = 0
-    
+    var confirmed = AVSpeechUtterance()
     let textColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
     let backgroundColorChoices = ["Red", "Black", "Gray", "White", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
     
@@ -119,22 +119,26 @@ class ActionsViewController: UIViewController {
             mbl_mw_acc_stop(board)
             mbl_mw_acc_disable_acceleration_sampling(board)
             mbl_mw_datasignal_unsubscribe(signal)
-        
 			DispatchQueue.main.async {
 				self.startButton.configuration?.background.backgroundColor = UIColor.white
-            
 				switch self.count {
 				case 0:
 					self.action4.configuration?.baseBackgroundColor = UIColor.blue
+                    self.confirmed = AVSpeechUtterance(string: "read is confirmed")
 				case 1:
 					self.action1.configuration?.baseBackgroundColor = UIColor.blue
+                    self.confirmed = AVSpeechUtterance(string: "sleep is confirmed")
 				case 2:
 					self.action2.configuration?.baseBackgroundColor = UIColor.blue
+                    self.confirmed = AVSpeechUtterance(string: "draw is confirmed")
 				case 3:
 					self.action3.configuration?.baseBackgroundColor = UIColor.blue
+                    self.confirmed = AVSpeechUtterance(string: "play is confirmed")
 				default:
 					self.action1.configuration?.baseBackgroundColor = UIColor.blue
 				}
+                self.confirmed.voice = AVSpeechSynthesisVoice(language: "en-US")
+                self.synthesizer.speak(self.confirmed)
 			}
 		}
 		else{

@@ -205,7 +205,6 @@ class WatchViewController: UIViewController {
 	}
     
     func sensorInput(){
-        print("sensor")
 		if (self.confirm){
 			UIApplication.shared.open(url!, options: [:], completionHandler: nil)
 		}
