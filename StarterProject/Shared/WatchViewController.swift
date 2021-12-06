@@ -81,7 +81,9 @@ class WatchViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+        timer.invalidate();
+        timer2.invalidate();
+        audioPlayer?.stop();
         device.flashLED(color: .red, intensity: 1.0, _repeat: 3)
         mbl_mw_debug_disconnect(device.board)
     }
@@ -91,7 +93,7 @@ class WatchViewController: UIViewController {
         self.startButton.configuration?.background.backgroundColor = UIColor.blue
         
         // Watch Functionality
-        timer = Timer.scheduledTimer(timeInterval: Double(scrollTime), target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
         
         
         // Sensor Function
@@ -108,7 +110,7 @@ class WatchViewController: UIViewController {
                 let obj: MblMwCartesianFloat = data!.pointee.valueAs()
                 print(Double(obj.x), Double(obj.y), Double(obj.z))
                 
-                if ((abs(obj.x)>0.7) || (abs(obj.y)>0.7)){
+                if ((abs(obj.x)>0.9) || (abs(obj.y)>0.9)){
                     //print(obj.x, obj.y, obj.z)
                     print("MOVEMENT DETECTED")
                     contBridge.sensorInput()
@@ -134,54 +136,61 @@ class WatchViewController: UIViewController {
             self.movie.configuration?.background.image = movie1
             self.url = URL(string:"https://www.disneyplus.com/video/6d31fb45-d7a5-4ffb-a99c-e914550b01a1")
 			self.currentmovie = "Meet the Robinsons"
-			let pathToSound = Bundle.main.path(forResource: "movie1", ofType: "mp3")!
-			let url = URL(fileURLWithPath: pathToSound)
-			
-			do{
-				audioPlayer = try AVAudioPlayer(contentsOf: url)
-				audioPlayer?.play()
-			} catch{
-				
-			}
+			//let pathToSound = Bundle.main.path(forResource: "Shared/Assets/movie1audio", ofType: "mp3")!
+			//let url = URL(fileURLWithPath: pathToSound)
+            if let asset = NSDataAsset(name: "movie1audio") {
+                do{
+                    audioPlayer = try AVAudioPlayer(data: asset.data, fileTypeHint: "mp3")
+                    audioPlayer?.play()
+                } catch{
+                    
+                }
+            }
             
         case 1:
             self.movie.configuration?.background.image = movie2
             self.url = URL(string: "https://www.disneyplus.com/video/b683ca96-70d0-453d-b014-207b16d74a5a")
 			self.currentmovie = "Tangled"
-			let pathToSound = Bundle.main.path(forResource: "movie2", ofType: "mp3")!
-			let url = URL(fileURLWithPath: pathToSound)
-			do{
-				audioPlayer = try AVAudioPlayer(contentsOf: url)
-				audioPlayer?.play()
-			} catch{
-				
-			}
+			//let pathToSound = Bundle.main.path(forResource: "Shared/Assets/movie2audio", ofType: "mp3")!
+			//let url = URL(fileURLWithPath: pathToSound)
+            if let asset = NSDataAsset(name: "movie2audio") {
+                do{
+                    audioPlayer = try AVAudioPlayer(data: asset.data, fileTypeHint: "mp3")
+                    audioPlayer?.play()
+                } catch{
+                    
+                }
+            }
 			
         case 2:
             self.movie.configuration?.background.image = movie3
             self.url = URL(string: "https://www.disneyplus.com/video/eccdbdc5-7767-448e-be14-74647b128ca9")
 			self.currentmovie = "Toy Story"
-			let pathToSound = Bundle.main.path(forResource: "movie3", ofType: "mp3")!
-			let url = URL(fileURLWithPath: pathToSound)
-			do{
-				audioPlayer = try AVAudioPlayer(contentsOf: url)
-				audioPlayer?.play()
-			} catch{
-				
-			}
+			//let pathToSound = Bundle.main.path(forResource: "Shared/Assets/movie3audio", ofType: "mp3")!
+            //let url = URL(fileURLWithPath: pathToSound)
+            if let asset = NSDataAsset(name: "movie3audio") {
+                do{
+                    audioPlayer = try AVAudioPlayer(data: asset.data, fileTypeHint: "mp3")
+                    audioPlayer?.play()
+                } catch{
+                    
+                }
+            }
 			
         case 3:
             self.movie.configuration?.background.image = movie4
             self.url = URL(string: "https://www.disneyplus.com/video/87982e2b-5636-41a2-9d9a-5bc77cacb7d7")
 			self.currentmovie = "The Lion King"
-			let pathToSound = Bundle.main.path(forResource: "movie4", ofType: "mp3")!
-			let url = URL(fileURLWithPath: pathToSound)
-			do{
-				audioPlayer = try AVAudioPlayer(contentsOf: url)
-				audioPlayer?.play()
-			} catch{
-				
-			}
+			//let pathToSound = Bundle.main.path(forResource: "Shared/Assets/movie4audio", ofType: "mp3")!
+			//let url = URL(fileURLWithPath: pathToSound)
+            if let asset = NSDataAsset(name: "movie4audio") {
+                do{
+                    audioPlayer = try AVAudioPlayer(data: asset.data, fileTypeHint: "mp3")
+                    audioPlayer?.play()
+                } catch{
+                    
+                }
+            }
 			
         default:
             self.movie.setBackgroundImage(movie3, for: UIControl.State.normal)
@@ -192,30 +201,26 @@ class WatchViewController: UIViewController {
     }
 	@objc func timerWait() {
 		self.confirm = false;
-		timer = Timer.scheduledTimer(timeInterval: Double(scrollTime), target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
 	}
     
     func sensorInput(){
+        print("sensor")
 		if (self.confirm){
 			UIApplication.shared.open(url!, options: [:], completionHandler: nil)
 		}
 		else{
 			timer.invalidate()
 			audioPlayer?.stop()
-			timer2 = Timer.scheduledTimer(timeInterval: Double(scrollTime), target: self, selector: #selector(timerWait), userInfo: nil, repeats: false)
-			let confirmspeak = AVSpeechUtterance(string: "Confirm Selection of")
+            timer2 = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerWait), userInfo: nil, repeats: false)
+			/*let confirmspeak = AVSpeechUtterance(string: "Confirm Selection of")
 			confirmspeak.voice = AVSpeechSynthesisVoice(language: "en-US")
 			synthesizer.speak(confirmspeak)
 			let moviespeak = AVSpeechUtterance(string: self.currentmovie)
 			moviespeak.voice = AVSpeechSynthesisVoice(language: "en-US")
-			synthesizer.speak(moviespeak)
+			synthesizer.speak(moviespeak)*/
 			self.confirm = true
 			
 		}
     }
-	@IBAction func back(_ sender: UIButton) {
-		timer.invalidate();
-		audioPlayer?.stop();
-	}
-    
 }

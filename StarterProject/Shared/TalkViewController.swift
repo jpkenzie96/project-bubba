@@ -85,6 +85,7 @@ class TalkViewController: UIViewController {
         self.yesNoLabel.configuration?.background.backgroundColor = UIColor.red
         self.yesNoLabel.configuration?.title = "No"
         yesNoLabel.titleLabel?.font =  UIFont(name: "Futura Medium", size: 90)
+        Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: false)
         yesNoLabel.titleLabel?.textColor = UIColor.black
         
         let board = device.board
@@ -134,11 +135,26 @@ class TalkViewController: UIViewController {
     
     
     @objc func timerUpdate() {
-        self.yes = false;
-        self.yesNoLabel.configuration?.background.backgroundColor = UIColor.red
-        self.yesNoLabel.configuration?.title = "No"
-        let nospeak = AVSpeechUtterance(string: "no")
-        self.synthesizer.speak(nospeak)
+        if(!self.yes){
+                    let nospeak = AVSpeechUtterance(string: "no")
+                    self.synthesizer.speak(nospeak)
+                    let board = device.board
+                    let signal = mbl_mw_acc_get_acceleration_data_signal(board)
+                    mbl_mw_acc_stop(board)
+                    mbl_mw_acc_disable_acceleration_sampling(board)
+                    mbl_mw_datasignal_unsubscribe(signal)
+                    self.startButton.configuration?.background.backgroundColor = UIColor.white
+                    //change blue color back in start button
+                    //turn off start button
+                }
+                if (self.yes){
+                    self.yesNoLabel.configuration?.background.backgroundColor = UIColor.red
+                    self.yesNoLabel.configuration?.title = "No"
+                    self.yesNoLabel.titleLabel?.font =  UIFont(name: "Futura Medium", size: 90)
+                    self.yesNoLabel.titleLabel?.textColor = UIColor.black
+                    
+                }
+                self.yes = false;
     }
     
 }

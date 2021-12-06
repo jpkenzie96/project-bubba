@@ -39,7 +39,7 @@ class ActionsViewController: UIViewController {
         let row = UserDefaults.standard.integer(forKey: "backgroundPickerViewRow")
         view.backgroundColor = SystemColor(color: backgroundColorChoices[row])
         
-        timer = Timer.scheduledTimer(timeInterval: Double(scrollTime), target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
         
         self.updateLabel("Restoring")
         if let state = DeviceState.loadForDevice(device) {
@@ -100,7 +100,7 @@ class ActionsViewController: UIViewController {
             mbl_mw_datasignal_subscribe(signal, bridge(obj: self)) { (context, data) in
                 let contBridge: ActionsViewController = bridge(ptr: context!)
                 let obj: MblMwCartesianFloat = data!.pointee.valueAs()
-                if ((abs(obj.x)>0.7) || (abs(obj.y)>0.7)){
+                if ((abs(obj.x)>0.9) || (abs(obj.y)>0.9)){
                     //print(obj.x, obj.y, obj.z)
                     print("MOVEMENT DETECTED")
                     contBridge.sensorInput()
@@ -139,13 +139,13 @@ class ActionsViewController: UIViewController {
 		}
 		else{
 			timer.invalidate()
-			timer2 = Timer.scheduledTimer(timeInterval: Double(scrollTime), target: self, selector: #selector(timerWait), userInfo: nil, repeats: false)
-			let confirmspeak = AVSpeechUtterance(string: "Confirm Selection of")
+            timer2 = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerWait), userInfo: nil, repeats: false)
+			/*let confirmspeak = AVSpeechUtterance(string: "Confirm Selection of")
 			confirmspeak.voice = AVSpeechSynthesisVoice(language: "en-US")
 			synthesizer.speak(confirmspeak)
 			let moviespeak = AVSpeechUtterance(string: self.currentaction)
 			moviespeak.voice = AVSpeechSynthesisVoice(language: "en-US")
-			synthesizer.speak(moviespeak)
+			synthesizer.speak(moviespeak)*/
 			self.confirm = true
 		}
     }

@@ -54,7 +54,7 @@ class HomeViewController: UIViewController {
             // Get the new view controller using segue.destinationViewController.
             if let talkViewController = segue.destination as? TalkViewController {
                 talkViewController.device = (device!)
-                talkViewController.scrollTime = (scrollTime!)
+                //talkViewController.scrollTime = (scrollTime!)
             } else if let actionsViewController = segue.destination as? ActionsViewController {
                 actionsViewController.device = (device!)
             } else if let watchViewController = segue.destination as? WatchViewController {

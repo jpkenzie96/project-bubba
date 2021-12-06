@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YLq-YR-QLh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YLq-YR-QLh">
     <device id="ipad12_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -448,17 +448,17 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jRe-6j-zhf">
-                                <rect key="frame" x="360" y="227.5" width="646" height="443"/>
+                                <rect key="frame" x="360" y="227.5" width="646" height="400"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="443" id="4z6-rr-n8o"/>
                                     <constraint firstAttribute="width" constant="646" id="Cf8-3M-xAg"/>
+                                    <constraint firstAttribute="height" constant="400" id="FUz-tf-l1J"/>
                                 </constraints>
                                 <buttonConfiguration key="configuration" style="plain" title="">
                                     <backgroundConfiguration key="background" image="movie1" imageContentMode="scaleToFill"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9b-6P-bb7">
-                                <rect key="frame" x="572.5" y="745.5" width="221" height="53"/>
+                                <rect key="frame" x="572.5" y="677.5" width="221" height="53"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" cornerStyle="medium">
                                     <backgroundConfiguration key="background">
@@ -484,7 +484,6 @@
                         <viewLayoutGuide key="safeArea" id="bHv-UV-Oic"/>
                         <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="C9b-6P-bb7" firstAttribute="top" secondItem="jRe-6j-zhf" secondAttribute="bottom" constant="75" id="Hsy-Wm-LSG"/>
                             <constraint firstItem="bHv-UV-Oic" firstAttribute="trailing" secondItem="qXF-5w-ztC" secondAttribute="trailing" constant="50" id="TTN-Mw-n1P"/>
                             <constraint firstItem="2ly-vG-r8Z" firstAttribute="top" secondItem="9L0-iE-Sbc" secondAttribute="top" constant="80" id="WBJ-Ki-lry"/>
                             <constraint firstItem="C9b-6P-bb7" firstAttribute="centerX" secondItem="9L0-iE-Sbc" secondAttribute="centerX" id="ecW-qv-poS"/>
@@ -492,6 +491,7 @@
                             <constraint firstItem="qXF-5w-ztC" firstAttribute="top" secondItem="2ly-vG-r8Z" secondAttribute="top" id="mY8-d8-IRP"/>
                             <constraint firstItem="2ly-vG-r8Z" firstAttribute="centerX" secondItem="9L0-iE-Sbc" secondAttribute="centerX" id="nzb-mk-tuE"/>
                             <constraint firstItem="jRe-6j-zhf" firstAttribute="top" secondItem="2ly-vG-r8Z" secondAttribute="bottom" constant="50" id="vA4-6v-9AR"/>
+                            <constraint firstItem="C9b-6P-bb7" firstAttribute="top" secondItem="jRe-6j-zhf" secondAttribute="bottom" constant="50" id="vQv-YQ-J7U"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PWi-l4-NFA"/>
@@ -873,7 +873,7 @@
     </scenes>
     <resources>
         <image name="01.square" catalog="system" width="128" height="114"/>
-        <image name="06.square" catalog="system" width="32" height="32"/>
+        <image name="06.square" catalog="system" width="128" height="114"/>
         <image name="MetaWear" width="157.5" height="157.5"/>
         <image name="book" catalog="system" width="128" height="99"/>
         <image name="gamecontroller" catalog="system" width="128" height="80"/>
