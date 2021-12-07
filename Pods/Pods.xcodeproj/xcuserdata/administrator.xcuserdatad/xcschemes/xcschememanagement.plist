@@ -7,7 +7,7 @@
 		<key>Bolts-Swift.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>3</integer>
 		</dict>
 		<key>MetaWear.xcscheme_^#shared#^_</key>
 		<dict>
@@ -17,12 +17,12 @@
 		<key>Pods-ProjectBubba.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>0</integer>
 		</dict>
 		<key>ZIPFoundation.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>2</integer>
 		</dict>
 		<key>iOSDFULibrary.xcscheme_^#shared#^_</key>
 		<dict>

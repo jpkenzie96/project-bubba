@@ -23,8 +23,6 @@ class ActionsViewController: UIViewController {
 	var timer2 = Timer()
     var count: Int = 0
     var confirmed = AVSpeechUtterance()
-    let textColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
-    let backgroundColorChoices = ["Red", "Black", "Gray", "White", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
     
     var device: MetaWear!
     var scrollTime: Int!
@@ -36,10 +34,10 @@ class ActionsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
-        let row = UserDefaults.standard.integer(forKey: "backgroundPickerViewRow")
-        view.backgroundColor = SystemColor(color: backgroundColorChoices[row])
+        let backgroundColor = UserDefaults.standard.string(forKey: "selectedBackgroundColor")
+        view.backgroundColor = SystemColor(color: String(backgroundColor ?? "Red"))
         
-        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: Double(scrollTime), target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
         
         self.updateLabel("Restoring")
         if let state = DeviceState.loadForDevice(device) {
@@ -121,7 +119,7 @@ class ActionsViewController: UIViewController {
             mbl_mw_datasignal_unsubscribe(signal)
 			DispatchQueue.main.async {
 				self.startButton.configuration?.background.backgroundColor = UIColor.white
-				switch self.count {
+				switch (self.count % 4) {
 				case 0:
 					self.action4.configuration?.baseBackgroundColor = UIColor.blue
                     self.confirmed = AVSpeechUtterance(string: "read is confirmed")
@@ -143,7 +141,7 @@ class ActionsViewController: UIViewController {
 		}
 		else{
 			timer.invalidate()
-            timer2 = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerWait), userInfo: nil, repeats: false)
+            timer2 = Timer.scheduledTimer(timeInterval: Double(scrollTime), target: self, selector: #selector(timerWait), userInfo: nil, repeats: false)
 			/*let confirmspeak = AVSpeechUtterance(string: "Confirm Selection of")
 			confirmspeak.voice = AVSpeechSynthesisVoice(language: "en-US")
 			synthesizer.speak(confirmspeak)

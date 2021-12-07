@@ -627,8 +627,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXN-7j-5EI" userLabel="backgroundSelection">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="cXN-7j-5EI" userLabel="backgroundSelection">
                                         <rect key="frame" x="289.5" y="58.5" width="61" height="58"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="58" id="ptO-ab-Tfj"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="35"/>
                                         <state key="normal" title="Red">
                                             <color key="titleColor" systemColor="labelColor"/>
@@ -651,8 +654,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAP-rF-NSh" userLabel="textSelection">
+                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="QAP-rF-NSh" userLabel="textSelection">
                                         <rect key="frame" x="277" y="58.5" width="86" height="58"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="58" id="XRl-jT-a04"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="35"/>
                                         <state key="normal" title="Black">
                                             <color key="titleColor" systemColor="labelColor"/>
@@ -687,14 +693,14 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="AQW-tP-2wA" userLabel="scrollingTimeSlider">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="AQW-tP-2wA" userLabel="scrollingTimeSlider">
                                         <rect key="frame" x="676.5" y="42" width="391.5" height="31"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="387.5" id="wsX-zP-MRR"/>
                                         </constraints>
                                         <imageReference key="minimumValueImage" image="01.square" catalog="system" symbolScale="large"/>
-                                        <imageReference key="maximumValueImage" image="06.square" catalog="system" symbolScale="large"/>
+                                        <imageReference key="maximumValueImage" image="15.square" catalog="system" symbolScale="large"/>
                                         <connections>
                                             <action selector="sliderValueChanged:" destination="LZH-dH-EkP" eventType="valueChanged" id="R4v-T6-0tc"/>
                                         </connections>
@@ -729,6 +735,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="whC-9Z-ykH"/>
                     <connections>
+                        <outlet property="BackgroundColorLabel" destination="yCr-8M-Byx" id="7al-2g-NO6"/>
+                        <outlet property="ScrollingLabel" destination="PkZ-Cc-bfi" id="0fc-UF-MtJ"/>
+                        <outlet property="SettingsLabel" destination="RQ0-8z-WNx" id="aU1-g8-eKf"/>
+                        <outlet property="TextColorLabel" destination="LBH-Ei-TSm" id="xkZ-Im-aMO"/>
                         <outlet property="backgroundColorSelection" destination="Akz-ld-Ocd" id="xbY-Fv-dm5"/>
                         <outlet property="backgroundSelectionButton" destination="cXN-7j-5EI" id="qZ0-DK-D4U"/>
                         <outlet property="scrollingTimeLabel" destination="bSt-Zx-LpJ" id="IWk-zm-Vhe"/>
@@ -873,7 +883,7 @@
     </scenes>
     <resources>
         <image name="01.square" catalog="system" width="128" height="114"/>
-        <image name="06.square" catalog="system" width="128" height="114"/>
+        <image name="15.square" catalog="system" width="128" height="114"/>
         <image name="MetaWear" width="157.5" height="157.5"/>
         <image name="book" catalog="system" width="128" height="99"/>
         <image name="gamecontroller" catalog="system" width="128" height="80"/>

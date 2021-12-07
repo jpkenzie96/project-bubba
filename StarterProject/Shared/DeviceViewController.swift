@@ -14,14 +14,14 @@ import MetaWearCpp
 class DeviceViewController: UIViewController {
     @IBOutlet weak var deviceStatus: UILabel!
     
-    let textColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
-    let backgroundColorChoices = ["Red", "Black", "Gray", "White", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
-    
     var device: MetaWear!
+    var scrollTime: Int!
     
     override func viewWillAppear(_ animated: Bool) {
-        let row = UserDefaults.standard.integer(forKey: "backgroundPickerViewRow")
-        view.backgroundColor = SystemColor(color: backgroundColorChoices[row])
+        let backgroundColor = UserDefaults.standard.string(forKey: "selectedBackgroundColor")
+        view.backgroundColor = SystemColor(color: String(backgroundColor ?? "Red"))
+        let textColor = UserDefaults.standard.string(forKey: "selectedTextColor")
+        UILabel.appearance(whenContainedInInstancesOf: [UIView.self]).textColor = SystemColor(color: textColor ?? "Black")
         
         super.viewWillAppear(animated);
         
@@ -53,6 +53,7 @@ class DeviceViewController: UIViewController {
             // Get the new view controller using segue.destinationViewController.
             if let homeViewController = segue.destination as? HomeViewController {
                 homeViewController.device = (device!)
+                homeViewController.scrollTime = 3
             }
         }
     

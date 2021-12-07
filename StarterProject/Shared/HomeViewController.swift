@@ -12,11 +12,8 @@ import MetaWear
 import MetaWearCpp
 
 @available(iOS 15.0, *)
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, ScrollTimeDelegate {
     @IBOutlet weak var settingsButton: UIButton!
-    
-    let textColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
-    let backgroundColorChoices = ["Red", "Black", "Gray", "White", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
     
     var device: MetaWear!
     var scrollTime: Int!
@@ -32,8 +29,13 @@ class HomeViewController: UIViewController {
         
         settingsButton.setTitle("", for: .normal)
         
-        let row = UserDefaults.standard.integer(forKey: "backgroundPickerViewRow")
-        view.backgroundColor = SystemColor(color: backgroundColorChoices[row])
+        let backgroundColor = UserDefaults.standard.string(forKey: "selectedBackgroundColor")
+        view.backgroundColor = SystemColor(color: String(backgroundColor ?? "Red"))
+        //SystemColor(color: backgroundColorChoices[row])
+    }
+    
+    func updateScrollTime(newScroll: Int) {
+        scrollTime = newScroll
     }
     
     @IBAction func talkViewButtonPressed(_ sender: Any) {
@@ -54,13 +56,16 @@ class HomeViewController: UIViewController {
             // Get the new view controller using segue.destinationViewController.
             if let talkViewController = segue.destination as? TalkViewController {
                 talkViewController.device = (device!)
-                //talkViewController.scrollTime = (scrollTime!)
+                talkViewController.scrollTime = (scrollTime!)
             } else if let actionsViewController = segue.destination as? ActionsViewController {
                 actionsViewController.device = (device!)
+                actionsViewController.scrollTime = (scrollTime!)
             } else if let watchViewController = segue.destination as? WatchViewController {
                 watchViewController.device = (device!)
+                watchViewController.scrollTime = (scrollTime!)
             } else if let settingsViewController = segue.destination as? SettingsViewController {
                 settingsViewController.device = (device!)
+                settingsViewController.delegate = self
             }
         }
     

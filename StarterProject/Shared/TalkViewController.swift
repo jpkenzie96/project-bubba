@@ -24,17 +24,14 @@ class TalkViewController: UIViewController {
     let synthesizer = AVSpeechSynthesizer()
     var check: Bool = false;
     
-    let textColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
-    let backgroundColorChoices = ["Red", "Black", "Gray", "White", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
-    
     var device: MetaWear!
     var scrollTime: Int!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
-        let row = UserDefaults.standard.integer(forKey: "backgroundPickerViewRow")
-        view.backgroundColor = SystemColor(color: backgroundColorChoices[row])
+        let backgroundColor = UserDefaults.standard.string(forKey: "selectedBackgroundColor")
+        view.backgroundColor = SystemColor(color: String(backgroundColor ?? "Red"))
         
         self.updateLabel("Restoring")
         if let state = DeviceState.loadForDevice(device) {
@@ -85,7 +82,7 @@ class TalkViewController: UIViewController {
         self.yesNoLabel.configuration?.background.backgroundColor = UIColor.red
         self.yesNoLabel.configuration?.title = "No"
         yesNoLabel.titleLabel?.font =  UIFont(name: "Futura Medium", size: 90)
-        Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: Double(scrollTime), target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: false)
         yesNoLabel.titleLabel?.textColor = UIColor.black
         
         let board = device.board

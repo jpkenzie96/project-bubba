@@ -24,9 +24,6 @@ class WatchViewController: UIViewController {
     var movie3 = UIImage(named:"movie3")
     var movie4 = UIImage(named:"movie4")
     
-    let textColorChoices = ["Black", "Gray", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
-    let backgroundColorChoices = ["Red", "Black", "Gray", "White", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
-    
     @IBOutlet weak var deviceStatus: UILabel!
     var device: MetaWear!
     var scrollTime: Int!
@@ -40,8 +37,8 @@ class WatchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
-        let row = UserDefaults.standard.integer(forKey: "backgroundPickerViewRow")
-        view.backgroundColor = SystemColor(color: backgroundColorChoices[row])
+        let backgroundColor = UserDefaults.standard.string(forKey: "selectedBackgroundColor")
+        view.backgroundColor = SystemColor(color: String(backgroundColor ?? "Red"))
 		
         self.updateLabel("Restoring")
         if let state = DeviceState.loadForDevice(device) {
@@ -93,7 +90,7 @@ class WatchViewController: UIViewController {
         self.startButton.configuration?.background.backgroundColor = UIColor.blue
         
         // Watch Functionality
-        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: Double(scrollTime), target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
         
         
         // Sensor Function
@@ -201,7 +198,7 @@ class WatchViewController: UIViewController {
     }
 	@objc func timerWait() {
 		self.confirm = false;
-        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: Double(scrollTime), target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
 	}
     
     func sensorInput(){
@@ -211,7 +208,7 @@ class WatchViewController: UIViewController {
 		else{
 			timer.invalidate()
 			audioPlayer?.stop()
-            timer2 = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerWait), userInfo: nil, repeats: false)
+            timer2 = Timer.scheduledTimer(timeInterval: Double(scrollTime), target: self, selector: #selector(timerWait), userInfo: nil, repeats: false)
 			/*let confirmspeak = AVSpeechUtterance(string: "Confirm Selection of")
 			confirmspeak.voice = AVSpeechSynthesisVoice(language: "en-US")
 			synthesizer.speak(confirmspeak)
